@@ -59,7 +59,18 @@ class game
         }
         bool isGuessCorrect()
         {
-            return false;
+            bool ansFlag=false;
+            cout<<"Enter a charachter that is missing: ";
+            cin>>userGuess;
+            for (int i = 0; i < answer.length(); i++)
+            {
+                if(answer[i]==userGuess)
+                {
+                    question[i]=userGuess;
+                    ansFlag=true;
+                }
+            }
+            return ansFlag;
         }
         void showQuestion()
         {
