@@ -61,9 +61,24 @@ class game
         {
             return false;
         }
+        void showQuestion()
+        {
+            if(ans==1)
+            {
+                cout<<"Question for "<<player1.name<<"\n";
+            }
+            else
+            {
+                cout<<"Question for "<<player2.name<<"\n";
+            }
+            cout<<question;
+            cout<<"Lives remaining: "<<lives;
+        }
         void playGame()
         {
             getQuestion();
+            clrscr();
+            showQuestion();
             if(isGuessCorrect())
             {
                 cout<<"Congratulations ! you have chosen correct option\n";
