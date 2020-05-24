@@ -15,7 +15,7 @@ class game
         player player1,player2;
         string question,answer,hint;
         char userGuess;
-        int qMaster,ans;
+        int qMaster,ans,lives=7;
     public:
         game()
         {
@@ -38,5 +38,40 @@ class game
                 cout<<"Invalid arguement\n";
                 getgamedata();
             }
+        }
+        void getQuestion()
+        {
+            if(qMaster==1)
+            {
+                cout<<"For "<<player1.name<<" only\n";
+            }
+            else
+            {
+                cout<<"For "<<player2.name<<" only\n";
+            }
+            cout<<"Please enter queston? (USE - FOR BLANK SPACES)\n";
+            cin>>question;
+            cout<<"Please enter hint?)\n";
+            cin>>hint;
+            cout<<"Please enter correct answer: \n";
+            cin>>answer;
+        }
+        bool isGuessCorrect()
+        {
+            return false;
+        }
+        void playGame()
+        {
+            getQuestion();
+            if(isGuessCorrect())
+            {
+                cout<<"Congratulations ! you have chosen correct option\n";
+            }
+            else
+            {
+                cout<<"Sorry ! you have chosen wrong option\n";
+                --lives;
+            }
+            //clearScreen();
         }
 };
