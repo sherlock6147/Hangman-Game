@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#define PATH "files/rules.txt"
+#define PATH "headerfiles/files/rules.txt"
 using namespace std;
 void dispRules()
 {
@@ -11,7 +11,7 @@ void dispRules()
     {
         while(getline(rulesFile,line))
         {
-            cout<<line<<"\n";
+            cout<<line<<""<<endl;
         }
     }
     rulesFile.close();    

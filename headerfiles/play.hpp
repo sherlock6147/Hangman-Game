@@ -37,7 +37,7 @@ class game
             }
             else
             {
-                cout<<"Invalid arguement\n";
+                cout<<"Invalid arguement"<<endl;
                 getgamedata();
             }
         }
@@ -45,17 +45,17 @@ class game
         {
             if(qMaster==1)
             {
-                cout<<"For "<<player1.name<<" only\n";
+                cout<<"For "<<player1.name<<" only"<<endl;
             }
             else
             {
-                cout<<"For "<<player2.name<<" only\n";
+                cout<<"For "<<player2.name<<" only"<<endl;
             }
-            cout<<"Please enter queston? (USE - FOR BLANK SPACES)\n";
+            cout<<"Please enter queston? (USE - FOR BLANK SPACES)"<<endl;
             cin>>question;
-            cout<<"Please enter hint?)\n";
+            cout<<"Please enter hint?)"<<endl;
             cin>>hint;
-            cout<<"Please enter correct answer: \n";
+            cout<<"Please enter correct answer: "<<endl;
             cin>>answer;
         }
         bool isGuessCorrect()
@@ -77,14 +77,14 @@ class game
         {
             if(ans==1)
             {
-                cout<<"Question for "<<player1.name<<"\n";
+                cout<<"Question for "<<player1.name<<""<<endl;
             }
             else
             {
-                cout<<"Question for "<<player2.name<<"\n";
+                cout<<"Question for "<<player2.name<<""<<endl;
             }
-            cout<<question;
-            cout<<"Lives remaining: "<<lives;
+            cout<<question<<endl;
+            cout<<"Lives remaining: "<<lives<<endl;
         }
         void isGameOver()
         {
@@ -115,23 +115,23 @@ class game
                 showQuestion();
                 if(isGuessCorrect())
                 {
-                    cout<<"Congratulations ! you have chosen correct option\n";
+                    cout<<"Congratulations ! you have chosen correct option"<<endl;
                 }
                 else
                 {
-                    cout<<"Sorry ! you have chosen wrong option\n";
+                    cout<<"Sorry ! you have chosen wrong option"<<endl;
                     --lives;
                 }
                 isGameOver();
                 if(player2WinFlag)
                 {
                     ++player2.score;
-                    cout<<player2.name<<" wins and his score is: "<<player2.score<<" .\n";
+                    cout<<player2.name<<" wins and his score is: "<<player2.score<<" ."<<endl;
                 }
                 else if(player1WinFlag)
                 {
                     ++player1.score;
-                    cout<<player1.name<<" wins and his score is: "<<player1.score<<" .\n";
+                    cout<<player1.name<<" wins and his score is: "<<player1.score<<" ."<<endl;
                 }
             }
         }
