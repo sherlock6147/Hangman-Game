@@ -111,7 +111,8 @@ class game
             getQuestion();
             while(player1WinFlag==false and player2WinFlag==false)
             {
-                clrscr();
+                clrscrr();
+                dispHangman(lives);
                 showQuestion();
                 if(isGuessCorrect())
                 {
