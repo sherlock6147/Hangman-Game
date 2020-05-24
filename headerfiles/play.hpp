@@ -16,6 +16,7 @@ class game
         player player1,player2;
         string question,answer,hint;
         char userGuess;
+        bool player1WinFlag=false,player2WinFlag=false;
         int qMaster,ans,lives=7;
     public:
         game()
@@ -85,20 +86,53 @@ class game
             cout<<question;
             cout<<"Lives remaining: "<<lives;
         }
+        void isGameOver()
+        {
+            if(lives==0 ||answer==question)
+            {
+                if(lives==0)
+                {
+                    if(qMaster==1)
+                        player1WinFlag=true;
+                    else
+                        player2WinFlag=true;
+                }
+                if(question==answer)
+                {
+                    if(qMaster==1)
+                        player2WinFlag=true;
+                    else
+                        player1WinFlag=true;
+                }
+            }
+        }
         void playGame()
         {
             getQuestion();
-            clrscr();
-            showQuestion();
-            if(isGuessCorrect())
+            while(player1WinFlag==false and player2WinFlag==false)
             {
-                cout<<"Congratulations ! you have chosen correct option\n";
+                clrscr();
+                showQuestion();
+                if(isGuessCorrect())
+                {
+                    cout<<"Congratulations ! you have chosen correct option\n";
+                }
+                else
+                {
+                    cout<<"Sorry ! you have chosen wrong option\n";
+                    --lives;
+                }
+                isGameOver();
+                if(player2WinFlag)
+                {
+                    ++player2.score;
+                    cout<<player2.name<<" wins and his score is: "<<player2.score<<" .\n";
+                }
+                else if(player1WinFlag)
+                {
+                    ++player1.score;
+                    cout<<player1.name<<" wins and his score is: "<<player1.score<<" .\n";
+                }
             }
-            else
-            {
-                cout<<"Sorry ! you have chosen wrong option\n";
-                --lives;
-            }
-            clrscr();
         }
 };
