@@ -1,0 +1,8 @@
+Thank you for bothering to read the rules.
+
+the QUESTION MASTER asks the question to the PLAYER
+the QUESTION MASTER sets the question and its answer for the user
+the PLAYER gets a turn to guess the answer till the man is not hanged
+on hanging the QUESTION MASTER is awarded 1 point else the PLAYER is awarded 1 point
+
+Thank you , Now lets get going
