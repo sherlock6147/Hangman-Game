@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include "displayHangman.hpp"
+#include "clearScreen.hpp"
 using namespace std;
 string qMaster = "QUESTION MASTER" , Player = "PLAYER";
 struct player
@@ -72,6 +73,6 @@ class game
                 cout<<"Sorry ! you have chosen wrong option\n";
                 --lives;
             }
-            //clearScreen();
+            clrscr();
         }
 };
