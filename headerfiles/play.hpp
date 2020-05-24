@@ -52,11 +52,11 @@ class game
                 cout<<"For "<<player2.name<<" only"<<endl;
             }
             cout<<"Please enter queston? (USE - FOR BLANK SPACES)"<<endl;
-            cin>>question;
+            getline(cin,question);
             cout<<"Please enter hint?)"<<endl;
-            cin>>hint;
+            getline(cin,hint);
             cout<<"Please enter correct answer: "<<endl;
-            cin>>answer;
+            getline(cin,answer);
         }
         bool isGuessCorrect()
         {
@@ -126,13 +126,21 @@ class game
                 if(player2WinFlag)
                 {
                     ++player2.score;
-                    cout<<player2.name<<" wins and his score is: "<<player2.score<<" ."<<endl;
+                    cout<<player2.name<<" wins and his/her score is: "<<player2.score<<" ."<<endl;
+                    cout<<player1.name<<" loses and his/her score is: "<<player1.score<<" ."<<endl;
                 }
                 else if(player1WinFlag)
                 {
                     ++player1.score;
-                    cout<<player1.name<<" wins and his score is: "<<player1.score<<" ."<<endl;
+                    cout<<player1.name<<" wins and his/her score is: "<<player1.score<<" ."<<endl;
+                    cout<<player2.name<<" loses and his/her score is: "<<player2.score<<" ."<<endl;
                 }
             }
+            player2WinFlag=false;
+            player1WinFlag=false;
+            int temp;
+            temp=qMaster;
+            qMaster=ans;
+            ans=temp;
         }
 };
