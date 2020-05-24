@@ -1,4 +1,4 @@
-#Hangman
+<h1>Hangman</h1>
 
 welcome to my repository
 i am happy to have you here...
